@@ -1,0 +1,19 @@
+{
+  "BackupFolder": "Backups",
+  "LogFile": "BackupLog.txt",
+  "FolderPrefix": "Weekly",
+  "JobPrefix": "Bkup-VM_",
+
+  "BackupLenght": 6,
+  "Retention": 2,
+  "MaxRunningJobs": 3,
+  "MaxVMBJobs": 2,
+  "JobCheckDealy": 300,
+
+  "Verbose": "True",
+
+  "SlackIcon": ":shipit:",
+  "SlackChannel": "backup_status",
+  "SlackUsername": "BakupVMs",
+  "SlackKey": "super/long/slack/key"
+}
