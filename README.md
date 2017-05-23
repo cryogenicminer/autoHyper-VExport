@@ -1,4 +1,9 @@
 # Windows Server Virtual Machine Backup Script
+This script is intended to run daily. Upon execution the script checks all running VMs (or a custom list via '|') and will promptly back up only the VMs that have exceeded the -bkupLen parameter or the BackupLenght config (in backupConfig.json). This script uses Hyper-V PoweShell commands to backup.
+* Even after power outages or a crash the backups will be executed on the following available day.
+* Will backup up live VMs without interruption.
+* Only two backups will happen simultaneously, beginning a subsequent backup after the previous has finished.
+* Slack integration for status notifications.
 
 ---
 
@@ -13,6 +18,7 @@ Get-VM | C:\yourpath\BackupVMScript\backupVMScript.ps1
 * Setup Schedualed BackupVM Task
 ```
 Coming Soon, to a git Repository near YOU!
+# This is intended to run daily.
 ```
 
 * Manual Call Backup Function with Parameters
@@ -74,7 +80,7 @@ The BackupVMScript folder should contain:
 
 
 * add support for basecamp
-* Check if its been waiting too long
+* _Check if its been waiting too long_
 *  ~~Strip logfile, so newline errors are omitted~~
 *  ~~add -force to override prudent tasks~~
 *  ~~post to slack important, not urgent~~
